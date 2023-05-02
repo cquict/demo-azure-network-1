@@ -21,8 +21,8 @@ az network public-ip create --resource-group $RG --location $LOCATION --name nod
 az network vnet create --resource-group $RG --name $VNET_NAME \
   --address-prefix 192.168.0.0/16 --subnet-name neta --subnet-prefix 192.168.1.0/24
   
-az network vnet create --resource-group $RG --name $VNET_NAME \
-  --subnet-name netb --subnet-prefix 192.168.2.0/24
+az network vnet subnet create --resource-group $RG --vnet-name $VNET_NAME \
+  --name netb --address-prefix 192.168.2.0/24
 
 # Ceate NSG and rules
 az network nsg create --resource-group $RG --name $NSG_NAME
