@@ -6,7 +6,7 @@ VNET_NAME="crs-vnet"
 NSG_NAME="crs-nsg"
 VM_SIZE="Standard_B1s"
 ADMIN_USER="network"
-LOCATION="southeastasia"
+LOCATION="australiacentral"
 IMAGE="Ubuntu"
 
 # Create a resource group
