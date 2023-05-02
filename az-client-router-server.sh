@@ -70,6 +70,6 @@ az network vnet subnet update --resource-group $RG --vnet-name $VNET_NAME \
   --name netb --route-table netb-rt
 
 # Enable forwarding
-az network nic update --resource-group $RG -name node2nic1 --ip-forwarding true
-az network nic update --resource-group $RG -name node2nic2 --ip-forwarding true
+az network nic update --resource-group $RG --name node2nic1 --ip-forwarding true
+az network nic update --resource-group $RG --name node2nic2 --ip-forwarding true
   
