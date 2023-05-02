@@ -60,7 +60,7 @@ az network route-table create --resource-group $RG --name netb-rt
 # Add routes to routing tables
 az network route-table route create --resource-group $RG --route-table-name neta-rt \
   --name route2netb --address-prefix 192.168.2.0/24 --next-hop-type VirtualAppliance --next-hop-ip-address 192.168.1.10
-az network route-table route create --resource-group $RG --route-table-name neta-rt \
+az network route-table route create --resource-group $RG --route-table-name netb-rt \
   --name route2neta --address-prefix 192.168.1.0/24 --next-hop-type VirtualAppliance --next-hop-ip-address 192.168.2.20
   
 # Update subnets
