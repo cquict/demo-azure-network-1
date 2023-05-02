@@ -4,10 +4,10 @@
 RG="crs-rg"
 VNET_NAME="crs-vnet"
 NSG_NAME="crs-nsg"
-VM_SIZE="Standard_B1s"
+VM_SIZE="Standard_B1ls"
 ADMIN_USER="network"
 LOCATION="australiacentral"
-IMAGE="Ubuntu"
+IMAGE="UbuntuLTS"
 
 # Create a resource group
 az group create --name $RG --location $LOCATION
@@ -18,10 +18,10 @@ az network public-ip create --resource-group $RG --location $LOCATION --name nod
 az network public-ip create --resource-group $RG --location $LOCATION --name node3_ip
 
 # Create networks
-az network vnet create --resource-group $RG --vnet-name $VNET_NAME \
+az network vnet create --resource-group $RG --name $VNET_NAME \
   --address-prefix 192.168.0.0/16 --subnet-name neta --subnet-prefix 192.168.1.0/24
   
-az network vnet create --resource-group $RG --vnet-name $VNET_NAME \
+az network vnet create --resource-group $RG --name $VNET_NAME \
   --subnet-name netb --subnet-prefix 192.168.2.0/24
 
 # Ceate NSG and rules
