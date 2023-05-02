@@ -32,16 +32,16 @@ az network nsg rule create --resource-group $RG --nsg-name $NSG_NAME \
 
 # Create NICs
 az network nic create --resource-group $RG --vnet-name $VNET_NAME --network-security-group $NSG_NAME \
-  --name node1nic1 --subnet neta --private-ip-address 192.168.1.11 --public-ip-address node1ip
+  --name node1nic1 --subnet neta --private-ip-address 192.168.1.11 --public-ip-address node1_ip
 
 az network nic create --resource-group $RG --vnet-name $VNET_NAME --network-security-group $NSG_NAME \
-  --name node2nic1 --subnet neta --private-ip-address 192.168.1.10 --public-ip-address node2ip
+  --name node2nic1 --subnet neta --private-ip-address 192.168.1.10 --public-ip-address node2_ip
 
 az network nic create --resource-group $RG --vnet-name $VNET_NAME --network-security-group $NSG_NAME \
-  --name node2nic2 --subnet netb --private-ip-address 192.168.1.20 
+  --name node2nic2 --subnet netb --private-ip-address 192.168.2.20 
 
 az network nic create --resource-group $RG --vnet-name $VNET_NAME --network-security-group $NSG_NAME \
-  --name node3nic1 --subnet netb --private-ip-address 192.168.1.21 --public-ip-address node3ip
+  --name node3nic1 --subnet netb --private-ip-address 192.168.2.21 --public-ip-address node3_ip
   
 # Create VMs
 az vm create --resource-group $RG --image $IMAGE --admin-username $ADMIN_USER --size $VM_SIZE --generate-ssh-keys \
